@@ -136,7 +136,7 @@ module.exports = function(usersManager) {
 ```
 
 Here we are creating a route that listens to "/".
-It takes in the argument _userManager_, and responds with the data from the _userManager.getAllUsers() function.
+It takes in the argument _userManager_, and responds with the data from the _userManager.getAllUsers()_ function.
 
 This router will need to be mounted to work, so in our index.js file add the following code:
 
@@ -154,7 +154,8 @@ app.listen(8080), function(){
     ...
 })
 ```
-The router is now mounted at "/users", but the object we are passing it _usersManager_ does not yet exists. So add users-manager.js to your BLL folder and put the following code in it:
+The router is now mounted at "/users", but the object we are passing it _usersManager_ does not yet exists.
+So add users-manager.js to your BLL folder and put the following code in it:
 
 ```js
 const usersRepo = require( "../DAL/users-repo.js" )
@@ -195,7 +196,28 @@ This file will eventually communicate with a database and fetch users from there
 Do you use see the workflow?
 The Route is mounted and listening to a specific url. When a get request is done the router uses the BLL function getAllUsers, which fetches users from the DAL, which in turn fetches data from the Database.
 
+Current folder strucutre:
+
+```
+|__ docker-compose.yaml
+|__ Dockerfile
+|__ package.json
+|__ package-lock.json
+|__ src
+    |__ BLL
+        |__ users-manager.js
+    |__ DAL
+        |__ users-repo.js
+    |__ PL
+        |__ index.js
+        |__ routes
+            |__ users-router.js
+
+```
+
 Now, localhost:8080/users shall return an array of two users :)
+
+
 
 
 

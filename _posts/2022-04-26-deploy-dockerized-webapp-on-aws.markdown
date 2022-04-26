@@ -33,7 +33,7 @@ Once your account is created, navigate to Amazon Lightsail.
 
 - Under Choose your instance plan, select any of the _3 months free!_ tiers. I just choose the first model.
 
-- Next, choose and instance name. I just went with Ubuntu, but name it something descriptive.
+- Next, choose an instance name. I just went with Ubuntu, but name it something descriptive.
 
 - Then, click create instance.
 
@@ -62,14 +62,14 @@ After everything is installed, run another `sudo apt update && sudo apt upgrade 
 A reboot here could be good, but should not be needed.
 
 
-## Setting upour dockerized git project
+## Setting up our dockerized git project
 
 Now that we have everyhting we need we simply clone our project with `git clone REPO_URL`.
 Go into the project-folder with `cd FOLDERNAME` and run `docker-compose build && docker-compose up`
 
 Make sure you know which port your project runs on, as we need to port forward that port within Amazon Lighsail.
 It could also be good to create a static ip-address for your instance, so the ip-address does not change once we reboot our system.
-On your homepage, go to the __Networking__ tab. Under IPv4 Firewall we need to create some rules.
+On your homepage, go to the __Networking__ tab. Under __IPv4 Firewall__ we need to create some rules.
 Firstly, if you want to be able to ping your server, click __Add rule__, choose _Ping_ under application and press _Create_.
 To port forward the port our application is listening to, click __Add rule__ chose _Custom_ under application, _TCP_ under Protocol and the correct port number under _Port or range_.
 In my case, 8080.

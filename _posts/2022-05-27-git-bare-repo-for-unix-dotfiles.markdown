@@ -8,7 +8,7 @@ categories: tutorial
 # introduction
 
 Need a place to store your config files aka dotfiles (or commonly spelled .dotfiles)?
-A Git Bare Repo is great for this, you can initialize it in a folder an only add the files systemwide you actually want to track.
+A Git Bare Repo is great for this, you can initialize it in a folder and only add the files systemwide you actually want to track.
 While you create a whole git repo at your home directory, things could get messy and ending up in you pushing sensitive information.
 
 

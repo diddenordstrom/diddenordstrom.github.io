@@ -21,19 +21,19 @@ Then, just paste the commands in your terminal.
 
 ```bash
 # Create the directory for your bare repository
-1. mkdir ~/.dotfiles
+mkdir ~/.dotfiles
 
 # Initialize a bare repository in the directory you just created
-2. git init --bare ~/.dotfiles
+git init --bare ~/.dotfiles
 
 # Create a Git alias that references the Git dotfiles (or config, which I use) repository and the local root directory from which Git adds files by default
-3. alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Configure the dotfiles bare repository to hide untracked files
-4. dotfiles config status.showUntrackedFiles no
+dotfiles config status.showUntrackedFiles no
 
 # Add the remote location to the repository (in this case GitHub) 
-5. dotfiles remote add origin https://github.com/$USERNAME/$REPOSITORY.git
+dotfiles remote add origin https://github.com/$USERNAME/$REPOSITORY.git
 ```
 
 
@@ -44,6 +44,4 @@ Then, just paste the commands in your terminal.
 2. Added an alias for our Git Bare repo, so we add files, check status etc by replacing `git` with `dotfiles` or wathever we set the alias to.
 Example: `dotfiles add .bashrc`
 
-3. Removed the feature to show untracked files while running `dotfiles status`, as it would print out the whole home directory.
-
-4. 
+3. Removed the feature to show untracked files while running `dotfiles status`, as it would print out the whole home directory. 
